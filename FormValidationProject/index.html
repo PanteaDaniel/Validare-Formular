@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+  <script src="script.js"></script>
+    <title></title>
+    <style>
+    #completeMessage
+    {
+      display: none;
+      font-size: 50px;
+      margin-top: 300px;
+      color:red;
+      text-align: center;
+    }
+    #warning{display: none;}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form id="form" action="">
+        <div class="row">
+          <div class="col">
+            <p>Campurile cu * sunt obligatorii</p>
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-lg-2">
+            <label for="lname">*Nume:</label>
+          </div>
+          <div class="col-lg-3">
+            <input onchange="checkName(this.id)"  type="text" id="lname" name="lastname" placeholder="Nume..." maxlength="60" class="w-100"/>
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-lg-2">
+            <label for="fname">*Prenume:</label>
+          </div>
+          <div class="col-lg-3">
+            <input type="text" onchange="checkName(this.id)" id="fname" name="firstname" placeholder="Prenume..." maxlength="60" class="w-100"/>
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-lg-2">
+            <label for="email">*Email:</label>
+          </div>
+          <div class="col-lg-3">
+            <input type="email" onchange="checkEmail()" id="email" name="email" placeholder="Email..." maxlength="30" class="w-100" />
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-lg-2">
+            <label for="tel">*Telefon:</label>
+          </div>
+          <div class="col-lg-3">
+            <input type="tel" onchange="checkTel()" id="tel" name="tel" placeholder="Telefon..." maxlength="30" class="w-100"/>
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-lg-2">
+            <label for="pic">*Poza de Profil:</label>
+          </div>
+          <div class="col-lg-3">
+            <input type="file" onchange="checkPic()" class="w-100" id="pic" name="pic" accept="image/*" />
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-lg-2">
+            <label for="bio">Biografie:</label>
+          </div>
+          <div class="col-lg-3">
+            <textarea class="w-100" id="bio" placeholder="Biografie..." maxlength="200" style="height:100px"></textarea>
+          </div>
+        </div>
+        <div class="row mb-2" >
+          <div class="col-lg-3 offset-lg-2 ">
+            <p id="warning" class="border border-danger rounded bg-warning text-danger p-1">
+
+            </p>
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-lg-3 offset-lg-2">
+            <input type="button" onclick="checkInfo()" class="w-100" value="Submit" />
+          </div>
+        </div>
+      </form>
+      <row>
+        <div id="completeMessage" class="col">
+          <p>
+            Multumim!
+          </p>
+        </div>
+      </row>
+
+    </div>
+  </body>
+</html>
